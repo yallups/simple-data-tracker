@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Login
+  form(method="post", action="/auth")
+    input(name='username', type='text')
+    input(name='password', type='text')
+    input(type='submit' value='Login')
+
+  h1 Add New User
+  form(method="post", action="/users")
+    input(name='username', type='text')
+    input(name='password', type='text')
+    input(type='submit' value='Save')
+
+  ul
+    each user, i in userlist
+      li= user.username
